@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_ipc_bundle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:text="Bundle"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_ipc_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:text="SharedFile"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_ipc_messenger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:text="Messenger"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_ipc_aidl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:text="AIDL and BinderPool"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_ipc_contentProvider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:text="ContentProvider"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_ipc_socket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:text="Socket"
+        android:onClick="onClick"/>
+
+</LinearLayout>

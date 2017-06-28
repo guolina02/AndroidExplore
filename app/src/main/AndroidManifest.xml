@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gln.androidexplore">
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name=".MyApplication">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Chapter1 -->
+        <activity android:name=".chapter1.Chapter1Activity"/>
+        <activity android:name=".chapter1.ConfigChangeActivity"
+            android:screenOrientation="sensor"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".chapter1.WithoutConfigActivity"
+            android:screenOrientation="sensor"/>
+        <activity android:name=".chapter1.IntentFilter1Activity">
+
+            <!--
+            ActivityNotFoundException
+            <intent-filter>
+                <action android:name="com.gln.chapter1.INTENTFILTER1"/>
+            </intent-filter>
+            -->
+
+            <!--
+            ActivityNotFoundException
+            <intent-filter>
+                <category android:name="com.gln.chapter1.category.a"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            -->
+
+            <!--
+            build failed,Missing one of the key attributes 'action#name,category#name' on element intent-filter at AndroidManifest.xml
+            <intent-filter>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            -->
+
+            <!-- action必须，category可以匹配任意一个，或者不写-->
+            <intent-filter>
+                <action android:name="com.gln.chapter1.INTENTFILTER2"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.gln.chapter1.category.b"/>
+            </intent-filter>
+
+            <!--
+            ActivityNotFoundException
+            <intent-filter>
+                <action android:name="com.gln.chapter1.INTENTFILTER3"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            -->
+
+            <!--
+            ActivityNotFoundException
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.gln.chapter1.category.c"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            -->
+
+            <intent-filter>
+                <action android:name="com.gln.chapter1.INTENTFILTER4"/>
+                <category android:name="com.gln.chapter1.category.d"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Chapter2 -->
+        <activity android:name=".chapter2.Chapter2Activity"/>
+        <activity android:name=".chapter2.IPCSecondActivity" android:process=":remote"/>
+
+        <service android:name=".chapter2.MessengerService"/>
+        <service android:name=".chapter2.SocketService"/>
+        <service android:name=".chapter2.AIDLService"/>
+        <provider
+            android:authorities="com.gln.androidexplore.chapter2"
+            android:name=".chapter2.IPCProvider"/>
+    </application>
+
+</manifest>
